@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comuni;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
 {
     public function home(){
 
-        return view ('welcome');
+        $comunis = Comuni::all();
+        return view ('welcome',compact('comunis',));
     }
 }

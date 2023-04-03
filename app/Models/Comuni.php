@@ -18,6 +18,6 @@ class Comuni extends Model
     // un comune è legato ad un solo utente
     public function user(){
 
-        return $this->BelongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComuniController;
 use App\Http\Controllers\PublicController;
 
 /*
@@ -15,3 +16,6 @@ use App\Http\Controllers\PublicController;
 */
 
 Route::get('/', [PublicController::class , 'home'])->name('home');
+
+Route::get('/comuni/create', [ComuniController::class , 'create'])->name('comuni.create');
+Route::post('/comuni/create', [ComuniController::class , 'store'])->name('comuni.store');

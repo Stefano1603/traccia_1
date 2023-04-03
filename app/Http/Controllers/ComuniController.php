@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comuni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ComuniController extends Controller
 {
@@ -20,7 +21,7 @@ class ComuniController extends Controller
      */
     public function create()
     {
-        //
+        return view('comuni.create');
     }
 
     /**
@@ -28,7 +29,20 @@ class ComuniController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            Comuni::create(
+
+            [
+                'name'=> $request->input('name'),
+                'description'=> $request->input('description'),
+                'img'=>$request->has('img') ? $request->file('img')->store('public/comunis') : '',
+                'user_id' => Auth::user()->id,
+                
+            ]
+        );
+        
+
+        return redirect()->route('home')->with('message','Comune aggiunto correttamente');
+       
     }
 
     /**
