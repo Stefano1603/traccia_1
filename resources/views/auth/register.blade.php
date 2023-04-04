@@ -29,6 +29,10 @@
                         <input type="text" class="form-control" name="surname">
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" name="phone">
+                    </div>
+                    <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" name="email" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp">

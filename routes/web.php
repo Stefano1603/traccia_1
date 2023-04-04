@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\ComuniController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +20,17 @@ use App\Http\Controllers\PublicController;
 
 Route::get('/', [PublicController::class , 'home'])->name('home');
 
+Route::middleware(['auth'])->group(function(){
+
+
 Route::get('/comuni/create', [ComuniController::class , 'create'])->name('comuni.create');
 Route::post('/comuni/create', [ComuniController::class , 'store'])->name('comuni.store');
+
+
+
+Route::get('google-autocomplete', [GoogleController::class, 'index'])->name('googleAutocomplete');
+
+// Route::get('/', [MapController::class, 'index']);
+
+});
+

@@ -6,6 +6,7 @@
             </div>
         </div>
     </div>
+    @auth
     <div class="container my-3">
         <div class="row">
             @foreach($comunis as $comuni)
@@ -23,4 +24,11 @@
             @endforeach
         </div>
     </div>
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-12 col-md-4 my-2">
+               <x-googleAutocomplete/>
+        </div>
+    </div>
+    @endauth
 </x-layout>

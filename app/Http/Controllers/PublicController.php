@@ -12,4 +12,6 @@ class PublicController extends Controller
         $comunis = Comuni::all();
         return view ('welcome',compact('comunis',));
     }
+
+   
 }
